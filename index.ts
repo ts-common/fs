@@ -13,5 +13,5 @@ export const readFile = (pathStr: string): Promise<Buffer> =>
         )
     )
 
-export const exists = async (dir: string): Promise<boolean> =>
+export const exists = (dir: string): Promise<boolean> =>
     new Promise<boolean>(resolve => fs.exists(dir, resolve))
