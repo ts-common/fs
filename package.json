@@ -1,19 +1,20 @@
 {
   "name": "@ts-common/fs",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Promisified File System",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "tsc": "tsc",
-    "test": "tsc && nyc mocha",
+    "test": "tsc && nyc mocha ./dist/test.js",
     "prepack": "npm install && tsc"
   },
   "types": "index.d.ts",
   "files": [
-    "index.d.ts",
-    "index.d.ts.map",
-    "index.js.map",
-    "index.ts"
+    "dist/index.d.ts",
+    "dist/index.d.ts.map",
+    "dist/index.js",
+    "dist/index.js.map",
+    "src/index.ts"
   ],
   "nyc": {
     "reporter": [

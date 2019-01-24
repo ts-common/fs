@@ -1,9 +1,9 @@
-import * as fsp from "../index"
+import * as fsp from "./index"
 import { assert } from "chai"
 
 describe("readFile", () => {
-    it("index.ts", async () => {
-        const result = await fsp.readFile("index.ts")
+    it("src/index.ts", async () => {
+        const result = await fsp.readFile("src/index.ts")
         assert.notStrictEqual(result.toString(), undefined)
     })
     it("unknown", async () => {
@@ -35,8 +35,8 @@ describe("recursiveReaddir", () => {
 })
 
 describe("exists", () => {
-    it("index.ts", async () => {
-        const result = await fsp.exists("index.ts")
+    it("src/index.ts", async () => {
+        const result = await fsp.exists("src/index.ts")
         assert.isTrue(result)
     })
     it("unknown", async () => {
