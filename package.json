@@ -1,6 +1,6 @@
 {
   "name": "@ts-common/fs",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "description": "Promisified File System",
   "main": "index.js",
   "scripts": {
@@ -37,10 +37,10 @@
     "chai": "^4.2.0",
     "mocha": "^5.2.0",
     "nyc": "^13.1.0",
-    "typescript": "^3.1.6"
+    "typescript": "^3.2.4"
   },
   "dependencies": {
-    "@types/node": "^10.12.2",
+    "@types/node": "^10.12.18",
     "tslib": "^1.9.3"
   }
 }
