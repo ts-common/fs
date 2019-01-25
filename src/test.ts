@@ -17,8 +17,8 @@ describe("readFile", () => {
 
 describe("readdir", () => {
     it("read current dir", async () => {
-        const result = await fsp.readdir("./")
-        const nm = result.filter(d => d.isDirectory && d.name === "node_modules")
+        const result = await fsp.readdir("./", { withFileTypes: true })
+        const nm = result.filter(d => d.isDirectory() && d.name === "node_modules")
         assert.strictEqual(nm.length, 1)
     })
 })

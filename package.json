@@ -1,6 +1,6 @@
 {
   "name": "@ts-common/fs",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "description": "Promisified File System",
   "main": "dist/index.js",
   "scripts": {
