@@ -1,5 +1,6 @@
 import * as fs from "fs"
 import * as path from "path"
+import * as asyncIt from "@ts-common/async-iterator"
 
 type Callback<T> = (err: NodeJS.ErrnoException, result: T) => void
 
@@ -20,16 +21,14 @@ export const writeFile = (pathStr: string, data: string): Promise<void> =>
 export const readdir = (pathStr: string): Promise<ReadonlyArray<fs.Dirent>> =>
     toPromise(callback => fs.readdir(pathStr, { withFileTypes: true }, callback))
 
-export const recursiveReaddir = async function *(dir: string): AsyncIterableIterator<string> {
-    for (const f of await readdir(dir)) {
-        const p = path.join(dir, f.name)
-        if (f.isDirectory()) {
-            yield *recursiveReaddir(p)
-        } else {
-            yield path.join(dir, f.name)
+export const recursiveReaddir = (dir: string): AsyncIterable<string> =>
+    asyncIt.flatMap(
+        asyncIt.fromPromise(readdir(dir)),
+        f => {
+            const p = path.join(dir, f.name)
+            return f.isDirectory() ?  recursiveReaddir(p) : asyncIt.fromSequence(p)
         }
-    }
-}
+    )
 
 export const exists = (dir: string): Promise<boolean> =>
     new Promise(resolve => fs.exists(dir, resolve))
