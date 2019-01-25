@@ -1,6 +1,6 @@
 {
   "name": "@ts-common/fs",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Promisified File System",
   "main": "dist/index.js",
   "scripts": {
@@ -8,7 +8,6 @@
     "test": "tsc && nyc mocha ./dist/test.js",
     "prepack": "npm install && tsc"
   },
-  "types": "index.d.ts",
   "files": [
     "dist/index.d.ts",
     "dist/index.d.ts.map",
