@@ -1,6 +1,6 @@
 {
   "name": "@ts-common/fs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Promisified File System",
   "main": "dist/index.js",
   "scripts": {
@@ -33,14 +33,14 @@
   "homepage": "https://github.com/ts-common/fs#readme",
   "devDependencies": {
     "@types/chai": "^4.1.7",
-    "@types/mocha": "^5.2.5",
+    "@types/mocha": "^5.2.6",
     "chai": "^4.2.0",
-    "mocha": "^5.2.0",
-    "nyc": "^13.1.0",
-    "typescript": "^3.2.4"
+    "mocha": "^6.0.2",
+    "nyc": "^13.3.0",
+    "typescript": "^3.3.3333"
   },
   "dependencies": {
-    "@ts-common/async-iterator": "^0.0.2",
+    "@ts-common/async-iterator": "^0.1.0",
     "@types/node": "^10.12.18",
     "tslib": "^1.9.3"
   }
