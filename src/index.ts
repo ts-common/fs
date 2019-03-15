@@ -11,9 +11,8 @@ export const exists = util.promisify(fs.exists)
 
 export const readdir = util.promisify(fs.readdir)
 
-export const recursiveReaddir = (dir: string): AsyncIterable<string> =>
-    asyncIt.flatMap(
-        asyncIt.fromPromise(readdir(dir, { withFileTypes: true })),
+export const recursiveReaddir = (dir: string): asyncIt.AsyncIterableEx<string> =>
+    asyncIt.fromPromise(readdir(dir, { withFileTypes: true })).flatMap(
         f => {
             const p = path.join(dir, f.name)
             return f.isDirectory() ?  recursiveReaddir(p) : asyncIt.fromSequence(p)
