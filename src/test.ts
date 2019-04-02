@@ -1,5 +1,5 @@
 import * as fsp from "./index"
-import { assert } from "chai"
+import * as assert from "assert"
 
 describe("readFile", () => {
     it("src/index.ts", async () => {
@@ -30,17 +30,28 @@ describe("recursiveReaddir", () => {
         for await (const file of result) {
             v = v || file.includes("node_modules") && file.includes("typescript")
         }
-        assert.isTrue(v)
+        assert.deepStrictEqual(v, true)
     })
 })
 
 describe("exists", () => {
     it("src/index.ts", async () => {
         const result = await fsp.exists("src/index.ts")
-        assert.isTrue(result)
+        assert.deepStrictEqual(result, true)
     })
     it("unknown", async () => {
         const result = await fsp.exists("unknown")
-        assert.isFalse(result)
+        assert.deepStrictEqual(result, false)
+    })
+})
+
+describe("recursiveRmdir", () => {
+    it("create and delete", async () => {
+        await fsp.mkdir("tmp")
+        await fsp.writeFile("tmp/a.json", "{}")
+        await fsp.mkdir("tmp/b")
+        assert.deepStrictEqual(await fsp.exists("tmp"), true)
+        await fsp.recursiveRmdir("tmp")
+        assert.deepStrictEqual(await fsp.exists("tmp"), false)
     })
 })
