@@ -1,6 +1,6 @@
 {
   "name": "@ts-common/fs",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Promisified File System",
   "main": "dist/index.js",
   "scripts": {
@@ -47,7 +47,7 @@
     "typescript": "^3.4.1"
   },
   "dependencies": {
-    "@ts-common/async-iterator": "^0.1.3",
+    "@ts-common/async-iterator": "^0.2.0",
     "@types/node": "^10.12.18",
     "tslib": "^1.9.3"
   }
