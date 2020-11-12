@@ -1,6 +1,6 @@
 {
   "name": "@ts-common/fs",
-  "version": "0.2.0",
+  "version": "1.1.0",
   "description": "Promisified File System",
   "main": "dist/index.js",
   "scripts": {
@@ -34,20 +34,20 @@
     "url": "git+https://github.com/ts-common/fs.git"
   },
   "author": "Sergey Shandar",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ts-common/fs/issues"
   },
   "homepage": "https://github.com/ts-common/fs#readme",
   "devDependencies": {
-    "@types/chai": "^4.1.7",
+    "@types/chai": "^4.2.13",
     "@types/mocha": "^5.2.6",
     "mocha": "^6.0.2",
-    "nyc": "^13.3.0",
+    "nyc": "^15.0.0",
     "typescript": "^3.4.1"
   },
   "dependencies": {
-    "@ts-common/async-iterator": "^0.2.0",
+    "@ts-common/async-iterator": "^1.1.0",
     "@types/node": "^10.12.18",
     "tslib": "^1.9.3"
   }
